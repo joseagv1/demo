@@ -1,7 +1,6 @@
 package com.tes.demo.model;
 
 import javax.persistence.*;
-import java.sql.Date;
 
 @Entity
 @Table(name = "transactions")
@@ -28,7 +27,7 @@ public class Transaction extends ParentEntity {
         this.transactionName = transactionName;
     }
 
-   /* public Date getTransactionDate() {
+    /*public Date getTransactionDate() {
         return transactionDate;
     }
 
