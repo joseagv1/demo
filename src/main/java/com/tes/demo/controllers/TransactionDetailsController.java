@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.IOException;
+import java.util.List;
 
 @RestController
 public class TransactionDetailsController {
@@ -34,6 +35,11 @@ public class TransactionDetailsController {
         }
         this.transactionDetailsService.save(transactionDetails);
         return new RestResponse(HttpStatus.OK.value(),"Operation Successful!!!");
+    }
+
+    @RequestMapping(value="/getTransactionDetails", method = RequestMethod.GET)
+    public List<TransactionDetails> getTransactionDetails(){
+        return this.transactionDetailsService.findAll();
     }
 
     private boolean validate(TransactionDetails transactionDetails){
